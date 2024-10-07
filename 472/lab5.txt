@@ -1,1 +1,38 @@
-﻿
+﻿1. Global Execution Context (GEC) Creation Phase
+outer: null
+this: Global object
+LE: [{ str: undefined (TDZ), user: undefined (TDZ), show: function }]
+2. Global Execution Context (GEC) Execution Phase
+outer: null
+this: Global object
+LE: [{ str: "Greetings, ", user: { firstName: "John", lastName: "Smith", display: function }, show: function }]
+3. user.display() Function Execution Context Creation Phase
+When user.display() is called:
+
+outer: Global Lexical Environment
+this: user object
+LE: [{}] (empty because display has no local variables)
+4. user.display() Function Execution Context Execution Phase
+outer: Global Lexical Environment
+this: user object
+LE: [{}]
+5. show() Function Execution Context Creation Phase
+When show("hi") is called:
+
+outer: Global Lexical Environment
+this: Global object (non-strict mode)
+LE: [{ msg: "hi" }]
+6. show() Function Execution Context Execution Phase
+outer: Global Lexical Environment
+this: Global object
+LE: [{ msg: "hi" }]
+7. show.call(user, "hello") Function Execution Context Creation Phase
+When show.call(user, "hello") is called:
+
+outer: Global Lexical Environment
+this: user object
+LE: [{ msg: "hello" }]
+8. show.call(user, "hello") Function Execution Context Execution Phase
+outer: Global Lexical Environment
+this: user object
+LE: [{ msg: "hello" }]
