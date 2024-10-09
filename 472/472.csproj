@@ -9,14 +9,17 @@
 
   <ItemGroup>
     <Content Remove="wwwroot\js\lab6.js" />
+    <Content Remove="wwwroot\js\test.js" />
   </ItemGroup>
 
   <ItemGroup>
     <_ContentIncludedByDefault Remove="wwwroot\js\lab6.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\js\test.js" />
   </ItemGroup>
 
   <ItemGroup>
     <None Include="wwwroot\js\lab6.js" />
+    <None Include="wwwroot\js\test.js" />
   </ItemGroup>
 
 </Project>
