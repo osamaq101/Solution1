@@ -62,7 +62,7 @@ class Quiz {
     }
 }
 //q2
-
+//b
 
 function Animal(name, speed) {
   this.name = name;
@@ -90,6 +90,8 @@ Rabbit.prototype = Object.create(Animal.prototype);
 Rabbit.prototype.constructor = Rabbit;
 
 
+
+
 Rabbit.prototype.hide = function() {
   console.log(`${this.name} hides`);
 };
@@ -97,3 +99,35 @@ Rabbit.prototype.hide = function() {
 let rabbit = new Rabbit("Bunny", 10);
 rabbit.run(5); 
 rabbit.hide(); 
+
+//q2 -A
+
+// Defining the Animal class
+class Animal {
+  constructor(name, speed) {
+    this.name = name;
+    this.speed = speed;
+  }
+
+  run(additionalSpeed) {
+    this.speed += additionalSpeed;
+    console.log(`${this.name} runs at speed ${this.speed}`);
+  }
+
+  static compareBySpeed(animal1, animal2) {
+    return animal1.speed - animal2.speed;
+  }
+}
+
+
+class Rabbit extends Animal {
+  hide() {
+    console.log(`${this.name} hides`);
+  }
+}
+
+
+let rabbit = new Rabbit("Bunny", 10);
+rabbit.run(5); 
+rabbit.hide();
+
