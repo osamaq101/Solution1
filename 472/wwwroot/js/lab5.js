@@ -61,3 +61,39 @@ class Quiz {
         return totalScore / this.students.length;
     }
 }
+//q2
+
+
+function Animal(name, speed) {
+  this.name = name;
+  this.speed = speed;
+}
+
+
+Animal.prototype.run = function(additionalSpeed) {
+  this.speed += additionalSpeed;
+  console.log(`${this.name} runs at speed ${this.speed}`);
+};
+
+
+Animal.compareBySpeed = function(a1, a2) {
+  return a1.speed - a2.speed;
+};
+
+
+function Rabbit(name, speed) {
+  Animal.call(this, name, speed); 
+}
+
+
+Rabbit.prototype = Object.create(Animal.prototype);
+Rabbit.prototype.constructor = Rabbit;
+
+
+Rabbit.prototype.hide = function() {
+  console.log(`${this.name} hides`);
+};
+
+let rabbit = new Rabbit("Bunny", 10);
+rabbit.run(5); 
+rabbit.hide(); 
